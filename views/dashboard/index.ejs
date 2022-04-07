@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/index.css"/>
+        <title>timeskip</title>
+    </head>
+    <body>
+        <h1>Dashboard</h1>
+        <a href="/dashboard/create-customer">Create Customer</a>
+
+        <% for(let customer of customers) { %>
+            <h2 class="customer-name"><%= customer.name %></h2>
+            <p><%= customer._id %></p>
+            <a href="/dashboard/edit-customer/<%= customer._id %>">Edit</a>
+            <form action="/dashboard/customer/<%= customer._id %>?_method=DELETE" method="POST">
+                <button>Delete</button>
+            </form>
+        <% } %>
+    </body>
+</html>

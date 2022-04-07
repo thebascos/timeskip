@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/index.css"/>
+        <title>timeskip</title>
+    </head>
+    <body>
+        <h1>Edit customer</h1>
+        <form action="/dashboard/customer/<%= customer._id %>?_method=PUT" method="POST">
+            <div>
+                <label for='name'>Name</label>
+                <input name='name' value=<%= customer.name %> required />
+            </div>
+            <button>Save</button>
+        </form>
+
+    </body>
+</html>
