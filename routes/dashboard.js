@@ -21,9 +21,10 @@ router.get('/create-customer', function (_req, res) {
 
 router.post('/customer', function (req, res) {
   // create customer
+  const email = req.body.email;
   const name = req.body.name;
 
-  Customer.create({ name: name }, function (err, _customer) {
+  Customer.create({ name: name, email: email }, function (err, _customer) {
     if (err) {
       console.log(err);
     } else {
