@@ -7,6 +7,10 @@
     </head>
     <body>
         <h1>Dashboard</h1>
+        <form action="/logout" method="POST">
+            <button>Log out</button>
+        </form>
+
         <a href="/dashboard/create-customer">Create Customer</a>
 
         <% for(let customer of customers) { %>

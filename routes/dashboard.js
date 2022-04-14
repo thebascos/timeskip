@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const Customer = require('../models/customer');
+const isLoggedIn = require('../middleware/isLoggedIn');
 
-router.get('/', function (_req, res) {
+router.get('/', isLoggedIn, function (_req, res) {
   // get all customers
   Customer.find({}, function (err, customers) {
     if (err) {
@@ -15,11 +16,11 @@ router.get('/', function (_req, res) {
   });
 });
 
-router.get('/create-customer', function (_req, res) {
+router.get('/create-customer', isLoggedIn, function (_req, res) {
   res.render('dashboard/create-customer');
 });
 
-router.post('/customer', function (req, res) {
+router.post('/customer', isLoggedIn, function (req, res) {
   // create customer
   const name = req.body.name;
 
@@ -32,7 +33,7 @@ router.post('/customer', function (req, res) {
   });
 });
 
-router.get('/edit-customer/:customerId', function (req, res) {
+router.get('/edit-customer/:customerId', isLoggedIn, function (req, res) {
   const id = req.params.customerId;
   Customer.findOne({ _id: id }, function (err, customer) {
     if (err) {
@@ -43,7 +44,7 @@ router.get('/edit-customer/:customerId', function (req, res) {
   });
 });
 
-router.put('/customer/:customerId', function (req, res) {
+router.put('/customer/:customerId', isLoggedIn, function (req, res) {
   // edit customer
   const name = req.body.name;
   const id = req.params.customerId;
@@ -57,7 +58,7 @@ router.put('/customer/:customerId', function (req, res) {
   });
 });
 
-router.delete('/customer/:customerId', function (req, res) {
+router.delete('/customer/:customerId', isLoggedIn, function (req, res) {
   // delete customer
   Customer.deleteOne({ _id: req.params.customerId }, function (err) {
     if (err) {
