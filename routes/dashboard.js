@@ -24,14 +24,20 @@ router.post('/customer', isLoggedIn, function (req, res) {
   // create customer
   const email = req.body.email;
   const name = req.body.name;
-
-  Customer.create({ name: name, email: email }, function (err, _customer) {
-    if (err) {
-      console.log(err);
+  const number = req.body.number;
+  Customer.findOne({ email: req.body.email }, function (_err, customer) {
+    if (customer) {
+      res.redirect('/dashboard/create-customer');
     } else {
-      res.redirect('/dashboard');
+      Customer.create({ name: name, email: email, number: number}, function (err, _customer) {
+        if (err) {
+          console.log(err);
+        } else {
+          res.redirect('/dashboard');
+        }
+      });
     }
-  });
+    })
 });
 
 router.get('/edit-customer/:customerId', isLoggedIn, function (req, res) {
@@ -49,8 +55,11 @@ router.put('/customer/:customerId', isLoggedIn, function (req, res) {
   // edit customer
   const name = req.body.name;
   const id = req.params.customerId;
+  const email = req.body.email;
+  const number=  req.body.number;
 
-  Customer.updateOne({ _id: id }, { name: name }, function (err, _customer) {
+
+  Customer.updateOne({ _id: id }, { name: name, email: email, number: number}, function (err, _customer) {
     if (err) {
       console.log(err);
     } else {

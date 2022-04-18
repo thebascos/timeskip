@@ -10,7 +10,11 @@
         <form action="/dashboard/customer/<%= customer._id %>?_method=PUT" method="POST">
             <div>
                 <label for='name'>Name</label>
-                <input name='name' value=<%= customer.name %> required />
+                <input name='name' value="<%= customer.name %>" required /><br>
+                <label for="email">Email</label>
+                <input type="email" value=<%= customer.email%> required /><br>
+                <label for="number">Phone number</label>
+                <input type="number" value=<%= customer.number %> required />
             </div>
             <button>Save</button>
         </form>

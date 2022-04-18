@@ -16,6 +16,7 @@
         <% for(let customer of customers) { %>
             <h2 class="customer-name"><%= customer.name %></h2>
             <h6><%= customer.email %></h6>
+            <h6><%= customer.number %></h6>
             <p><%= customer._id %></p>
             <a href="/dashboard/edit-customer/<%= customer._id %>">Edit</a>
             <form action="/dashboard/customer/<%= customer._id %>?_method=DELETE" method="POST">
