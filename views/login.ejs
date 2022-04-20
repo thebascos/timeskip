@@ -1,35 +1,27 @@
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/index.css"/>
-        <title>timeskip</title>
-    </head>
-    <body>
-        <h1>Login</h1>
-        <form action="/login" method="POST">
-            <div>
-                <label for='username'>Username</label>
-                <input name='username' required />
-            </div>
-            <div>
-                <label for='password'>Password</label>
-                <input name='password' type='password' required />
-            </div>
-            <button>Login</button>
-        </form>
+<%- include('partials/header') %>
+    <h1>Login</h1>
+    <form action="/login" method="POST">
+        <div>
+            <label for='username'>Username</label>
+            <input name='username' required />
+        </div>
+        <div>
+            <label for='password'>Password</label>
+            <input name='password' type='password' required />
+        </div>
+        <button>Login</button>
+    </form>
 
-        <h1>Sign up</h1>
-        <form action="/signup" method="POST">
-            <div>
-                <label for='username'>Username</label>
-                <input name='username' required />
-            </div>
-            <div>
-                <label for='password'>Password</label>
-                <input name='password' type='password' required />
-            </div>
-            <button>Sign up</button>
-        </form>
-    </body>
-</html>
+    <h1>Sign up</h1>
+    <form action="/signup" method="POST">
+        <div>
+            <label for='username'>Username</label>
+            <input name='username' required />
+        </div>
+        <div>
+            <label for='password'>Password</label>
+            <input name='password' type='password' required />
+        </div>
+        <button>Sign up</button>
+    </form>
+<%- include('partials/footer') %>
