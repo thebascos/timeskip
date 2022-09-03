@@ -6,30 +6,38 @@
         <title>timeskip</title>
     </head>
     <body>
-        <h1>Login</h1>
-        <form action="/login" method="POST">
-            <div>
-                <label for='username'>Username</label>
-                <input name='username' required />
+        <div class="pinka">
+        <div class= "mainParent">
+            <div class="firstChild">
+                <h1>Login</h1>
+                <form action="/login" method="POST">
+                    <div>
+                        <label for='username'>Username</label><br>
+                        <input name='username' required />
+                    </div>
+                    <div>
+                        <label for='password'>Password</label><br>
+                        <input name='password' type='password' required />
+                    </div>
+                    <div class="buttoN"><button>Log in</button></div>
+                </form>
             </div>
-            <div>
-                <label for='password'>Password</label>
-                <input name='password' type='password' required />
+            <div class="secondChild">
+            <h1>Sign up</h1>
+            <form action="/signup" method="POST">
+                <div>
+                    <label for='username'>Username</label><br>
+                    <input name='username' required />
+                </div>
+                <div>
+                    <label for='password'>Password</label><br>
+                    <input name='password' type='password' required />
+                </div>
+                <div class="buttoN"><button>Sign up</button></div>
+                
+            </form>
             </div>
-            <button>Login</button>
-        </form>
-
-        <h1>Sign up</h1>
-        <form action="/signup" method="POST">
-            <div>
-                <label for='username'>Username</label>
-                <input name='username' required />
-            </div>
-            <div>
-                <label for='password'>Password</label>
-                <input name='password' type='password' required />
-            </div>
-            <button>Sign up</button>
-        </form>
+        </div>
+        </div>
     </body>
 </html>

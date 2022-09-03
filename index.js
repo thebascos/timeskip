@@ -42,7 +42,7 @@ app.use(function (req, res, next) {
 // MongoDB Configuration
 const mongoURI =
   process.env.MONGODB_URI ||
-  'mongodb+srv://timeskip:timeskip@cluster0.ykk77.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+  'mongodb+srv://timeskip:timeskip@cluster0.xpzfbfq.mongodb.net/?retryWrites=true&w=majority'
 mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
